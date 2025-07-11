@@ -1,0 +1,68 @@
+/* พื้นหลัง */
+body {
+  background-color: #000;
+  color: pink;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* หัวใจอยู่กลาง */
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: beat 1s infinite;
+}
+
+/* ข้อความหมุนเป็นวงหัวใจ */
+.heart span {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #ffb6c1;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* แอนิเมชันหัวใจเต้น */
+@keyframes beat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* ดาววิ้งๆ */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* ข้อความพิเศษที่พิมพ์ออกมาทีละตัว */
+#typing {
+  color: #ff69b4;
+  font-size: 18px;
+  margin-top: 40px;
+  animation: typingEffect 3s steps(40, end);
+}
